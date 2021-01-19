@@ -2,6 +2,6 @@
 
 <ul id="all-competitions">
   <% @competitions.each do |comp| %>
-    <li id="comp-<%= comp.id %>"><%= comp.name %></li>
+    <li id="comp-<%= comp.id %>"><%= link_to comp.name, competition_path(comp.id) %></li>
   <% end %>
 </ul>
