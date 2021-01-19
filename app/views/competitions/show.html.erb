@@ -7,7 +7,10 @@
 
 <ul id="teams">
   <% @competition.teams.each do |team| %>
-    <li id="team-<%= team.id %>"><%= team.nickname %></li>
+    <li id="team-<%= team.id %>">
+      <p><%= team.nickname %></p>
+      <p><%= team.hometown %></p>
+    </li>
   <% end %>
 </section>
 
