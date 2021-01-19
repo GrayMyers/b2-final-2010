@@ -1,0 +1,14 @@
+<h1><%= @competition.name %></h1>
+<section id="competition-properties">
+  <p>Name: <%= @competition.name %></p>
+  <p>Location: <%= @competition.location %></p>
+  <p>Sport: <%= @competition.sport %></p>
+</section>
+
+<ul id="teams">
+  <% @competition.teams.each do |team| %>
+    <li id="team-<%= team.id %>"><%= team.nickname %></li>
+  <% end %>
+</section>
+
+<p id="avg-age"><%= @competition.players.average_age %></p>
