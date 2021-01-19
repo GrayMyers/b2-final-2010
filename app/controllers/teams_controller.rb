@@ -1,4 +1,9 @@
 class TeamsController < ApplicationController
+
+  def index
+    @teams = Team.by_average_age
+  end
+
   def new
     @competition = Competition.find(params[:competition_id])
   end
