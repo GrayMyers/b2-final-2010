@@ -26,6 +26,10 @@ describe Team, type: :model do
       @team3 = Team.create(nickname: "team not playing", hometown: "everywhere")
       @player7 = Player.create(name: "player 7", age: "200000000", team: @team3)
 
+      CompetitionTeam.create(team: @team1, competition: @competition1)
+      CompetitionTeam.create(team: @team2, competition: @competition1)
+      CompetitionTeam.create(team: @team3, competition: @competition1)
+
       expect(Team.by_average_age).to eq([@team3, @team2, @team1])
     end
   end
