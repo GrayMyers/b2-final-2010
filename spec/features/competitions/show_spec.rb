@@ -20,9 +20,9 @@ describe "competition show page" do
 
   it "has the properties of the competition listed on the page" do
     within("#competition-properties") do
-      expect(page).to have_content(@competition.name)
-      expect(page).to have_content(@competition.location)
-      expect(page).to have_content(@competition.sport)
+      expect(page).to have_content(@competition1.name)
+      expect(page).to have_content(@competition1.location)
+      expect(page).to have_content(@competition1.sport)
     end
   end
 
@@ -30,7 +30,7 @@ describe "competition show page" do
     within("#teams") do
       within("#team-#{@team1.id}") do
         expect(page).to have_content(@team1.nickname)
-        expect(page).to have_content(@competition.hometown)
+        expect(page).to have_content(@competition1.hometown)
       end
     end
   end
