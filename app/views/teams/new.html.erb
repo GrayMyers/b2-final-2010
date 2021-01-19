@@ -1,1 +1,6 @@
 <h1>Register a new team</h1>
+<%= form_with model: Team.new, url: competition_teams_path(@competition.id) do |form| %>
+  <%= form.text_field :nickname %>
+  <%= form.text_field :hometown %>
+  <%= form.submit "Register" %>
+<% end %>
