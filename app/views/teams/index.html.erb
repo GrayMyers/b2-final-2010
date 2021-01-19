@@ -1,0 +1,9 @@
+<h1>Teams</h1>
+<ul id="teams">
+  <% @teams.each do |team| %>
+    <li id="team-<%= team.id %>">
+      <p><%= team.nickname %></p>
+      <p><%= team.avg_age %></p>
+    </li>
+  <% end %>
+</ul>
