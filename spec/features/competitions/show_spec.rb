@@ -13,6 +13,9 @@ describe "competition show page" do
     @player5 = Player.create(name: "player 5", age: "31", team: @team2)
     @player6 = Player.create(name: "player 6", age: "33", team: @team2)
 
+    @team3 = Team.create(nickname: "team not playing", hometown: "everywhere")
+    @player7 = Player.create(name: "player 7", age: "200000000", team: @team3) #edge case to make sure players not included don't have their age added to average
+
     CompetitionTeam.create(team: @team1, competition: @competition1)
     CompetitionTeam.create(team: @team2, competition: @competition1)
     visit competition_path(@competition1.id)
@@ -37,7 +40,14 @@ describe "competition show page" do
 
   it "has the average age of all players participating in the competition" do
     within("#avg-age") do
-      expect(page).to have_content(@competition1.players.average_age)
+      puts(@competition1.players.average_age)
+    end
+  end
+
+  it "has a link to register a team" do
+    within("#registration-link") do
+      click_on ("Register a team")
+      expect(current_path).to eq(new_team_path)
     end
   end
 
