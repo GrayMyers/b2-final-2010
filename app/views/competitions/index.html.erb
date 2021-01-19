@@ -1,0 +1,7 @@
+<h1>All Competitions</h1>
+
+<ul id="all-competitions">
+  <% @competitions.each do |comp| %>
+    <li id-"comp-<%= comp.id %>"><% comp.name %></li>
+  <% end %>
+</ul>
