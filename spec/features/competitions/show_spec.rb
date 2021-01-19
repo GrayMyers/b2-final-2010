@@ -47,7 +47,7 @@ describe "competition show page" do
   it "has a link to register a team" do
     within("#registration-link") do
       click_on ("Register a team")
-      expect(current_path).to eq(new_team_path)
+      expect(current_path).to eq(teams_path)
     end
   end
 
