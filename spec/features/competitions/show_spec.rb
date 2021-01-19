@@ -30,7 +30,7 @@ describe "competition show page" do
     within("#teams") do
       within("#team-#{@team1.id}") do
         expect(page).to have_content(@team1.nickname)
-        expect(page).to have_content(@competition1.hometown)
+        expect(page).to have_content(@team1.hometown)
       end
     end
   end
