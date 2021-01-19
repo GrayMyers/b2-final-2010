@@ -7,7 +7,7 @@ describe Player, type: :model do
   describe "class methods" do
 
     it "average_age" do
-      expect(Player.average_age).to eq(0) #edge case
+      expect(Player.average_age).to eq(nil) #edge case (expect it not to error when called with no players)
 
       @team1 = Team.create(nickname: "team 1", location: "somewhere")
       @player1 = Player.create(name: "player 1", age: 12, team: @team1)
