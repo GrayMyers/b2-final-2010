@@ -40,14 +40,14 @@ describe "competition show page" do
 
   it "has the average age of all players participating in the competition" do
     within("#avg-age") do
-      puts(@competition1.players.average_age)
+      expect(page).to have_content(@competition1.players.average_age)
     end
   end
 
   it "has a link to register a team" do
     within("#registration-link") do
       click_on ("Register a team")
-      expect(current_path).to eq(ew_competition_team_path(@competition1.id))
+      expect(current_path).to eq(new_competition_team_path(@competition1.id))
     end
   end
 
