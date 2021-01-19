@@ -2,9 +2,9 @@ require "rails_helper"
 
 describe "competitions index page" do
   before :each do
-    @competition1 = Competition.new(name: 'Mens Regional', location: 'Louisville', sport: 'basketball')
-    @competition2 = Competition.new(name: "competition 2", location: "place where competition 2 is located", sport: "unspecified")
-    @competition3 = Competition.new(name: "competition 3", location: "place where competition 3 is located", sport: "unspecified")
+    @competition1 = Competition.create(name: 'Mens Regional', location: 'Louisville', sport: 'basketball')
+    @competition2 = Competition.create(name: "competition 2", location: "place where competition 2 is located", sport: "unspecified")
+    @competition3 = Competition.create(name: "competition 3", location: "place where competition 3 is located", sport: "unspecified")
     visit competitions_path
   end
 
